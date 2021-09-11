@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<style>
+    h1{
+        font-family: -apple-system, BlinkMacSystemFont,
+         'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    h3{
+        color: blue;
+        font-family: Arial;
+    }
+    th,td{
+        padding:8px;
+        
+    }
+    table{
+        margin: 0px 0px 0px 450px;
+    }
+    /* #goto{
+    background-image: linear-gradient( blue, skyblue);
+    color: white;
+     border-radius:18px ;
+     font-size: 15px;
+    padding: 15px 25px;
+    text-decoration: none;
+    } */
+    #btn{
+    padding: 10px 20px;
+    color: white;
+    background-image: linear-gradient(50deg, maroon , black);
+    font-size: 15px;
+    border-top-left-radius: 22px;
+    border-bottom-right-radius: 22px;
+    margin: 0px 200px;
+}
+#main{
+    margin: 20px  5px 5px  460px;
+}
+    #div1{
+        text-align: center;
+        background-image: linear-gradient(blue ,skyblue , whitesmoke );
+        padding: 20px;
+        color: white;
+    }
+    form{
+        margin: 50px;
+    }
+    input{
+        width: 40%;
+        padding: 10px;
+        border-radius: 18px;
+        margin: 5px;
+        color: blue;
+        font-size: 18px;
+    }
+    .error{
+      color: rgb(214, 4, 4);
+      margin: 4px;
+      text-align: left;
+}
+</style>
+    </head>
+    <body>
+        <!-- <form action="" onsubmit ="return validateform()"> -->
+     <div id="div1">    
+     <h1>Create your Account</h1></div>
+     <div id="main">
+        <form action="https://arfeenzahra.github.io/completereg.github.io/"onsubmit ="return confirmform()">
+    
+            <input type="text" placeholder="First name" id="fname" >
+            <br><p id="fnm" class="error"> </p>
+
+        <input type="text" placeholder="Last name" id="lname">
+        <br><p id="lnm" class="error"> </p>
+  
+    <input type="email" placeholder="email" id="email">
+    <p id="emailerror" class="error"> </p>
+        <small>You can use letters,numbers & periods</small>
+<h3>Use my current email address instead</h3>
+          <br>
+
+        <input type="password" placeholder="password" id="password">
+        <br><p id="passerror" class="error"> </p>
+
+        <input type="password"placeholder="confirm" id="cpass">
+        <br><p id="cperror" class="error"> </p>
+<small>use 8 or more chacters with a mix of letters,numbers & symbols </small></td></tr>
+
+<br>
+<br>
+    
+      <!-- <a href="completereg.html"id="goto" target="_blank">Next</a> -->
+      <button id="btn" >Next</button>
+
+        </form></div>
+        <script> 
+           let fname =  document.getElementById("fname");
+           let lname =  document.getElementById("lname");
+            let email = document.getElementById("email");
+            let password = document.getElementById("password");
+            let cpass = document.getElementById("cpass");
+            let flag = 1;
+            function confirmform(){
+                if(fname.value == ""){
+                   document.getElementById("fnm").innerHTML = "first name is empty";
+                   flag = 0;
+                }
+                else if(fname.value.length < 3){
+                   document.getElementById("fnm").innerHTML = "first name char less than 3";
+                   flag = 0;
+                }
+                else{
+                   document.getElementById("fnm").innerHTML = "";
+                        flag = 1;
+                }
+                if(lname.value == ""){
+                   document.getElementById("lnm").innerHTML = "last name is empty";
+                   flag = 0;
+                }
+                else if(lname.value.length < 2){
+                   document.getElementById("lnm").innerHTML = "first name char less than 2";
+                   flag = 0;
+                }
+                else{
+                   document.getElementById("lnm").innerHTML = "";
+                        flag = 1;
+                }
+                if(email.value == ""){
+                document.getElementById("emailerror").innerHTML = "email is empty";
+                    flag = 0;
+                 }
+                 else{
+                    document.getElementById("emailerror").innerHTML = "";
+                        flag = 1;
+                 }
+                 if(password.value == ""){
+                    document.getElementById("passerror").innerHTML = "password is empty";
+                    flag = 0;
+                 }
+                 else{
+                    document.getElementById("passerror").innerHTML = "";
+                      flag = 1;
+                 }
+                 if(cpass.value == ""){
+                    document.getElementById("cperror").innerHTML = "confirm password is empty";
+                    flag = 0;
+                 }
+                 else{
+                    document.getElementById("cperror").innerHTML = "";
+                      flag = 1;
+                 }
+                if(flag){
+                    return true;
+                }
+                else{
+                   return false;
+                }
+            }
+         </script>
+    </body>
+</html>
